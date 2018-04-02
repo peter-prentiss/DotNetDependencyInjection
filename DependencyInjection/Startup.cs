@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using DependencyInjection.Models;
+using DependencyInjection.Infrastructure;
 
 namespace DependencyInjection
 {
@@ -13,6 +15,7 @@ namespace DependencyInjection
     {
         public void ConfigureServices(IServiceCollection services)
         {
+            TypeBroker.SetRepositoryType<AlternateRepository>();
             services.AddMvc();
         }
 
